@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signIn } from '../helpers/firebase';
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -9,13 +10,15 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
+    signIn(email, password, navigate)
+    navigate('/')
   };
 
   return (
     <div>
       <div className="card bg-dark text-white">
         <img src={'https://picsum.photos/800/800'} className="card-img" alt="samp" />
-        <div className="card-img-overlay register-form p-5">
+        <div className="card-img-overlay register-form p-5 w-75">
         <h1 className="form-title display-3 shadow-sm">Login</h1>
         <form id="register" onSubmit={handleSubmit}>
           <div className="mb-3">

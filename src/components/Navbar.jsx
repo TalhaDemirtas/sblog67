@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logocw from "../assets/cw.jpeg";
 import { DropdownButton, Dropdown } from "react-bootstrap";
-// import { AuthContext } from '../contexts/AuthContext';
-// import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
  
 const Navbar = () => {
-  const navigate = useNavigate();
-  // const currentUser = { displayName: 'Talha' };
-  const currentUser = false;
-
+  const navigate = useNavigate(); 
+  const { currentUser } = useContext(AuthContext);
+  // const currentUser = false;
   return (
     <div>
       <nav className="navbar navbar-dark bg-primary">
@@ -22,7 +20,7 @@ const Navbar = () => {
         <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-              <DropdownButton id="dropdown-item-button" title={currentUser.displayName}>
+              <DropdownButton id="dropdown-item-button" title={currentUser}>
             <Dropdown.Item as="button" /*onClick={() => logOut()}*/>Profile</Dropdown.Item>
             <Dropdown.Item as="button" /*onClick={() => logOut()}*/>Logout</Dropdown.Item>
             </DropdownButton>

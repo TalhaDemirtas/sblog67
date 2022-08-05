@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { createUser } from '../helpers/firebase';
+import { createUser } from '../helpers/firebase';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -11,17 +11,16 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const displayName = `${firstName} ${lastName}`;
-    console.log(firstName, lastName,email,password);
-    // createUser(email, password, navigate, displayName);
+    const displayName = `${firstName} ${lastName}`;
+    console.log(firstName, lastName ,email ,password);
+    createUser(email, password, navigate, displayName);
   };
 
   return (
     <div>
       <div className="card bg-dark text-white">
         <img src={'https://picsum.photos/800/800'} className="card-img" alt="samp" />
-        <div className="card-img-overlay">
-        <div className="register-form p-5">
+        <div className="card-img-overlay register-form p-5 w-75">
         <h1 className="form-title display-3">Register</h1>
         <form id="register" onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -83,7 +82,6 @@ const Register = () => {
           />
         </form>
       </div>
-        </div>
       </div>
     </div>
   );
