@@ -36,7 +36,9 @@ export const createUser = async (email, password, navigate, displayName) => {
       displayName: displayName,
     });
     navigate('/');
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 export const signIn = async (email, password, navigate) => {
@@ -47,7 +49,9 @@ export const signIn = async (email, password, navigate) => {
       password
     );
     navigate('/');
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 export const userObserver = (setCurrentUser) => {

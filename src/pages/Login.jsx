@@ -7,7 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const Login = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     signIn(email, password, navigate);
   };
@@ -26,7 +26,7 @@ const Login = () => {
         />
         <div className="card-img-overlay register-form p-5 w-75">
           <h1 className="form-title display-3 shadow-sm">Login</h1>
-          <form id="register" onSubmit={Login}>
+          <form id="register" onSubmit={handleLogin}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -61,7 +61,7 @@ const Login = () => {
             />
             <input
               className="btn btn-primary form-control mt-3"
-              value="Continue with Google"
+              defaultValue="Continue with Google🔍"
               onClick={ggLogin}
             />
           </form>

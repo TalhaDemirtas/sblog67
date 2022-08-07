@@ -9,8 +9,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
 
-  console.log(currentUser);
-
   return (
     <div>
       <nav className="navbar navbar-dark bg-primary">
@@ -30,7 +28,7 @@ const Navbar = () => {
                   >
                     Profile
                   </Dropdown.Item>
-                  <Dropdown.Item as="button" onClick={() => logOut}>
+                  <Dropdown.Item as="button" onClick={() => logOut()}>
                     Logout
                   </Dropdown.Item>
                 </DropdownButton>
