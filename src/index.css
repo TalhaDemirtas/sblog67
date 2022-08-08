@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.form-title {
+  text-shadow: 2px 2px black;
+}
+
+.form-label {
+  text-shadow: 1px 1px black;
+}
+
+.blog-card {
+  background-color: #98a4e6;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 1rem;
+  width: 300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.blog-card img {
+  object-fit: cover;
+  height: 300px;
+  max-width: 100%;
+}

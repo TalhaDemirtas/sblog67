@@ -21,7 +21,13 @@ const Navbar = () => {
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-                <DropdownButton id="dropdown-item-button" title="{currentUser}">
+              <DropdownButton id="dropdown-item-button" title="{currentUser}">
+                  <Dropdown.Item
+                    as="button"
+                    onClick={() => navigate('/newblog')}
+                  >
+                    Add New
+                  </Dropdown.Item>
                   <Dropdown.Item
                     as="button"
                     onClick={() => navigate('/profile')}

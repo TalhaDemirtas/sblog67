@@ -25,7 +25,7 @@ const Login = () => {
           alt="samp"
         />
         <div className="card-img-overlay register-form p-5 w-75">
-          <h1 className="form-title display-3 shadow-sm">Login</h1>
+          <h1 className="form-title display-3">Login</h1>
           <form id="register" onSubmit={handleLogin}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
