@@ -9,24 +9,16 @@ const Register = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleReg = (e) => {
     e.preventDefault();
     const displayName = `${firstName} ${lastName}`;
-    console.log(firstName, lastName, email, password);
     createUser(email, password, navigate, displayName);
   };
 
   return (
-    <div>
-      <div className="card bg-dark text-white">
-        <img
-          src={'https://picsum.photos/800/800'}
-          className="card-img"
-          alt="samp"
-        />
-        <div className="card-img-overlay register-form p-5 w-75">
-          <h1 className="form-title display-3">Register</h1>
-          <form id="register" onSubmit={handleSubmit}>
+    <div className='d-flex px-5'>
+          <form id="register" onSubmit={handleReg}>
+            <h2 className="form-title display-4">Register</h2>
             <div className="mb-3">
               <label htmlFor="firstName" className="form-label">
                 First Name
@@ -85,8 +77,6 @@ const Register = () => {
               value="Register"
             />
           </form>
-        </div>
-      </div>
     </div>
   );
 };

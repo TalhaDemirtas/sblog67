@@ -13,10 +13,10 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
-          <img src={Logocw} alt="cwLogo" onClick={() => navigate('/')} />
-          <h3 className="navbar-brand" onClick={() => navigate('/')}>
-            SH*T BLOG
-          </h3>
+          <img src={Logocw} alt="navlogo" onClick={() => navigate('/')} />
+          <h2 className="navbar-brand" onClick={() => navigate('/')}>
+            \-Simple Blog-/
+          </h2>
 
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (

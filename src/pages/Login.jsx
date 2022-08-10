@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ggProvider, signIn } from '../helpers/firebase';
 
 const Login = () => {
+  
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
@@ -17,16 +18,9 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="card bg-dark text-white">
-        <img
-          src={'https://picsum.photos/800/800'}
-          className="card-img"
-          alt="samp"
-        />
-        <div className="card-img-overlay register-form p-5 w-75">
-          <h1 className="form-title display-3">Login</h1>
+    <div className='d-flex px-5'>
           <form id="register" onSubmit={handleLogin}>
+            <h2 className="form-title display-4">Login</h2>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -56,7 +50,7 @@ const Login = () => {
             <div className="link">Forgot Password?</div>
             <input
               type="submit"
-              className="btn btn-primary form-control"
+              className="btn btn-primary form-control mt-2"
               value="Login"
             />
             <input
@@ -65,8 +59,6 @@ const Login = () => {
               onClick={ggLogin}
             />
           </form>
-        </div>
-      </div>
     </div>
   );
 };
