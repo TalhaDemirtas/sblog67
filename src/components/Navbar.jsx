@@ -35,7 +35,7 @@ const Navbar = () => {
                   >
                     Profile
                   </Dropdown.Item>
-                  <Dropdown.Item as="button" onClick={() => logOut()}>
+                  <Dropdown.Item as="button" onClick={() => logOut(navigate)}>
                     Logout
                   </Dropdown.Item>
                 </DropdownButton>

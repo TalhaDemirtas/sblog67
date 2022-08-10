@@ -5,7 +5,6 @@ import { GetBlog } from '../helpers/firebase';
 
 const Dashboard = () => {
   const {isLoading, blogList} = GetBlog();
-  console.log(blogList)
   // const { currentUser } = useContext(AuthContext);
 
   return (
@@ -24,4 +23,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-

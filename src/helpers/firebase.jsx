@@ -8,10 +8,11 @@ import {
   updateProfile,
   GoogleAuthProvider,
   signInWithPopup,
+  sendPasswordResetEmail,
 } from 'firebase/auth';
 import { getDatabase,onValue,push, ref, remove, set, update  } from "firebase/database";
 import { useState,useEffect } from "react";
-import Toastify from "./toastNotify"
+import { toastErrorNotify, toastSuccessNotify, toastWarnNotify } from "./toastNotify"
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -36,10 +37,11 @@ export const createUser = async (email, password, navigate, displayName) => {
     await updateProfile(auth.currentUser, {
       displayName: displayName,
     });
-    console.log(userCredential)
+    toastSuccessNotify('Registered successfully');
     navigate('/');
   } catch (error) {
     console.log(error)
+    toastErrorNotify('Register Fault');
   }
 };
 
@@ -50,10 +52,11 @@ export const signIn = async (email, password, navigate) => {
       email,
       password
     );
-    console.log(userCredential)
+    toastSuccessNotify('Login')
     navigate('/');
   } catch (error) {
     console.log(error)
+    toastErrorNotify('Login Fault');
   }
 };
 
@@ -72,6 +75,7 @@ export const ggProvider = (navigate) => {    //Need to add deploy link to Fireba
   signInWithPopup(auth, provider)
     .then((result) => {
       console.log(result);
+      toastSuccessNotify('Google Login')
       navigate('/');
     })
     .catch((error) => {
@@ -79,9 +83,23 @@ export const ggProvider = (navigate) => {    //Need to add deploy link to Fireba
     });
 };
 
-export const logOut = () => {
+export const logOut = (navigate) => {
   signOut(auth);
+  toastWarnNotify('Log Out');
+  navigate('/');
 };
+
+export const forgotPassword = (email) => {
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      toastWarnNotify('Please check your mail box');
+    })
+    .catch((err) => {
+      toastErrorNotify(err.message);
+    });
+};
+
+/*-------------------Realtime Database---------------------------------*/
 
 const firebase = initializeApp(firebaseConfig);
 
@@ -119,7 +137,7 @@ export const GetBlog=()=>{                 // Get Data
 export const DelBlog=(id)=>{
   const data = getDatabase(firebase);
   remove(ref(data,"blogs/"+id));
-  Toastify("Deleted Successfully")
+  toastSuccessNotify("Deleted Successfully")
 }
 
 export const UpdateBlog=(blog)=>{

@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from "react";
+import { toastWarnNotify } from "../helpers/toastNotify";
 
 const BlogCard = ({ title, imgurl, content, id }) => {
   const navigate = useNavigate();
+  const { currentUser } = useContext(AuthContext);
+  
 
   return (
       <div className="card">
@@ -10,7 +15,9 @@ const BlogCard = ({ title, imgurl, content, id }) => {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{content}</p>
             <button className="btn btn-primary" onClick={() => {
-              navigate('/details/'+ id)}}>Read More</button>
+              currentUser ? 
+              (navigate('/details/')) : 
+              (toastWarnNotify('Please log in to see detail'))}}>Read More</button>
           </div>
       </div>
   );
