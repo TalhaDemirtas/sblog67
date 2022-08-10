@@ -4,7 +4,7 @@ import { GetBlog } from '../helpers/firebase';
 // import { AuthContext } from '../contexts/AuthContext';
 
 const Dashboard = () => {
-  const {isLoading, blogList} = GetBlog();
+  const { isLoading, blogList } = GetBlog();
   // const { currentUser } = useContext(AuthContext);
 
   return (
@@ -15,7 +15,7 @@ const Dashboard = () => {
             <span className="sr-only">Loading...</span>
           </div>
         ) : (
-          blogList?.map((item,id) => <BlogCard key={item.id} {...item} />)
+          blogList?.map((item, id) => <BlogCard key={item.id} {...item} />)
         )}
       </div>
     </>

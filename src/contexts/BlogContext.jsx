@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const BlogContext = () => {
-  return (
-    <div>BlogContext</div>
-  )
-}
+  return <div>BlogContext</div>;
+};
 
-export default BlogContext
+export default BlogContext;

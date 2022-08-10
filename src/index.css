@@ -1,8 +1,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
 }
 
 img {
@@ -21,7 +25,7 @@ img {
 
 .card:hover {
   transform: scale(1.025);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
 }
 
 .card-text {

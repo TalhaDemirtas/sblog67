@@ -1,13 +1,12 @@
-import nBlog from '../assets/blok.png'
+import nBlog from '../assets/blok.png';
 
-const BlogForm = ({blog, setBlog, handleSubmit}) => {
-
+const BlogForm = ({ blog, setBlog, handleSubmit }) => {
   const handleChange = (e) => {
-    e.preventDefault()
-    const {id, value} = e.target;
+    e.preventDefault();
+    const { id, value } = e.target;
     setBlog({ ...blog, [id]: value });
-    console.log(blog)
-  }
+    console.log(blog);
+  };
 
   return (
     <div>
@@ -19,14 +18,12 @@ const BlogForm = ({blog, setBlog, handleSubmit}) => {
         />
         <div className="card-img-overlay register-form p-5 w-75">
           <div className="d-flex">
-          <h1 className="form-title display-3">Add_New_Blog</h1>
-          <img src={nBlog} alt="blokimg" width='75px'/>
+            <h1 className="form-title display-3">Add_New_Blog</h1>
+            <img src={nBlog} alt="blokimg" width="75px" />
           </div>
           <form id="addblog" onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label className="form-label">
-                Title
-              </label>
+              <label className="form-label">Title</label>
               <input
                 type="text"
                 className="form-control"
@@ -38,9 +35,7 @@ const BlogForm = ({blog, setBlog, handleSubmit}) => {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">
-                Image URL
-              </label>
+              <label className="form-label">Image URL</label>
               <input
                 type="text"
                 className="form-control"
@@ -52,9 +47,7 @@ const BlogForm = ({blog, setBlog, handleSubmit}) => {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">
-                Content
-              </label>
+              <label className="form-label">Content</label>
               <textarea
                 type="text"
                 className="form-control"
@@ -76,6 +69,6 @@ const BlogForm = ({blog, setBlog, handleSubmit}) => {
       </div>
     </div>
   );
-}
+};
 
 export default BlogForm;
