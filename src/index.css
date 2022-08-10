@@ -35,3 +35,9 @@ img {
   height: 12rem;
   width: 14.9rem;
 }
+
+.detail-img {
+  object-fit: cover;
+  height: 12rem;
+  width: 14.9rem;
+}
