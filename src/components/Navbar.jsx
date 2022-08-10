@@ -8,6 +8,7 @@ import { logOut } from '../helpers/firebase';
 const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
+  const navName = currentUser.displayName;
 
   return (
     <div>
@@ -21,7 +22,7 @@ const Navbar = () => {
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-              <DropdownButton id="dropdown-item-button" title="{currentUser}">
+              <DropdownButton id="dropdown-item-button" title={navName}>
                   <Dropdown.Item
                     as="button"
                     onClick={() => navigate('/newblog')}
