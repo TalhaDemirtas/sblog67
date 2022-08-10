@@ -16,7 +16,7 @@ const BlogCard = ({ title, imgurl, content, id }) => {
             <p className="card-text">{content}</p>
             <button className="btn btn-primary" onClick={() => {
               currentUser ? 
-              (navigate('/details/')) : 
+              (navigate('/details/'+id)) : 
               (toastWarnNotify('Please log in to see detail'))}}>Read More</button>
           </div>
       </div>

@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
+import { GetBlog } from "../helpers/firebase";
 
 const Details = ({imgurl, title, content}) => {
   
-const { id } = useParams();
-console.log(id)
+  const {blogList} = GetBlog();
+  console.log(blogList)
+  const { id } = useParams();
+  const xyz = id;
+  console.log(xyz)
+  
+  // console.log(blogList.id)
 
 return (
     <div className="card">
