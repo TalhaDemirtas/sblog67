@@ -157,11 +157,10 @@ export const DelBlog = (id) => {
   toastSuccessNotify('Deleted Successfully');
 };
 
-export const UpdateBlog = (blog) => {
+export const UpBlog = (blog) => {
   const data = getDatabase(firebase);
   const updates = {};
   updates['blogs/' + blog.id] = blog;
-
   return update(ref(data), updates);
 };
 

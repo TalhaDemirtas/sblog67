@@ -5,11 +5,7 @@ body {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
-img {
-  cursor: pointer;
-}
-
-.navbar-brand {
+img, .navbar-brand {
   cursor: pointer;
 }
 
@@ -30,13 +26,7 @@ img {
   overflow: hidden;
 }
 
-.card-img-top {
-  object-fit: cover;
-  height: 12rem;
-  width: 14.9rem;
-}
-
-.detail-img {
+.card-img-top, .detail-img {
   object-fit: cover;
   height: 12rem;
   width: 14.9rem;

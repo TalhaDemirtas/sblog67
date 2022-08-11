@@ -3,7 +3,6 @@ const BlogForm = ({ blog, setBlog, handleSubmit }) => {
     e.preventDefault();
     const { id, value } = e.target;
     setBlog({ ...blog, [id]: value });
-    console.log(blog);
   };
 
   return (
