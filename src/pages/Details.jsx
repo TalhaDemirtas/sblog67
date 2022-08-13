@@ -17,8 +17,8 @@ const Details = ({ imgurl, title, content }) => {
         <p>{details?.content}</p>
         <div className="btn-group" role="group" aria-label="gr">
         <button type="button" className="btn btn-secondary" onClick={() => {navigate(-1)}}>Main Page</button>
-        <button type="button" className="btn btn-secondary" onClick={() => {navigate(-1/*'/updateblog/'+id*/);
-        toastWarnNotify("Edit isn't ready yet :|")}}>Edit</button>
+        <button type="button" className="btn btn-secondary" onClick={() => {navigate('/updateblog/'+id);
+        toastWarnNotify("Ready for edit :)")}}>Edit</button>
         <button type="button" className="btn btn-secondary" onClick={() => {DelBlog(id); navigate(-1)}}>Delete</button>
         </div>
     </div>
