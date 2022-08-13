@@ -43,8 +43,8 @@ function UpdateBlog() {
         <input
           type="text"
           className="form-control"
-          id="title"
-          placeholder="Enter a title"
+          id="author"
+          placeholder="Enter your name"
           required
           value={blog?.author}
           onChange={handleChange}
