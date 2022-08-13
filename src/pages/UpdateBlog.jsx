@@ -2,6 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { UpBlog, GetBlog } from '../helpers/firebase';
 import { toastSuccessNotify } from '../helpers/toastNotify';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+
+const initialValues = { title: '', imgurl: '', content: '', author: '' };
 
 function UpdateBlog() {
 
@@ -11,13 +14,16 @@ function UpdateBlog() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    UpBlog(edit)
+    UpBlog(blog)
     toastSuccessNotify('Edited')
     navigate('/')
   };
 
+  const [blog, setBlog] = useState(initialValues);  //ERR*********************
   const handleChange = (e) => {
     e.preventDefault();
+    const { id, value } = e.target;
+    setBlog({ ...blog, [id]: value });
   };
 
   return (
