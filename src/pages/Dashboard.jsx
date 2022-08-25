@@ -1,11 +1,8 @@
-// import { useContext, useState } from 'react';
 import BlogCard from '../components/BlogCard';
 import { GetBlog } from '../helpers/firebase';
-// import { AuthContext } from '../contexts/AuthContext';
 
 const Dashboard = () => {
   const { isLoading, blogList } = GetBlog();
-  // const { currentUser } = useContext(AuthContext);
 
   return (
     <>

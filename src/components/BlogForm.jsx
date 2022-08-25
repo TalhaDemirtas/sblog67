@@ -19,6 +19,7 @@ const { currentUser } = useContext(AuthContext);
             type="text"
             className="form-control"
             id="author"
+            maxLength={25}
             placeholder={currentUser.displayName}
             required
             value={blog.author}
@@ -31,6 +32,7 @@ const { currentUser } = useContext(AuthContext);
             type="text"
             className="form-control"
             id="title"
+            maxLength={40}
             placeholder="Enter a title"
             required
             value={blog.title}

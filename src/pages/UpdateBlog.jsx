@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { UpBlog, GetBlog } from '../helpers/firebase';
-import { toastSuccessNotify } from '../helpers/toastNotify';
+import { toastSuccessNotify } from '../helpers/toast';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -10,6 +10,8 @@ function UpdateBlog() {
 
   const { id } = useParams();
   const { blogList } = GetBlog();
+  const navigate = useNavigate();
+  const [blog, setBlog] = useState(initialValues);
   useEffect(() => {
     if (blogList) {
       const blog = blogList.find((blog) => blog.id === id);
@@ -18,18 +20,14 @@ function UpdateBlog() {
       }
     }
   }, [id, blogList]);
-  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     UpBlog(blog)
-    toastSuccessNotify('Edited')
+    toastSuccessNotify('Edit complete')
     navigate('/')
   };
-
-  const [blog, setBlog] = useState(initialValues);  //ERR*********************
   const handleChange = (e) => {
     e.preventDefault();
-    // edit[id] = value;
     const { id, value } = e.target;
     setBlog({ ...blog, [id]: value });
   };
@@ -44,8 +42,8 @@ function UpdateBlog() {
           type="text"
           className="form-control"
           id="author"
+          maxLength={25}
           placeholder="Enter your name"
-          required
           value={blog?.author}
           onChange={handleChange}
         />
@@ -56,6 +54,7 @@ function UpdateBlog() {
           type="text"
           className="form-control"
           id="title"
+          maxLength={40}
           placeholder="Enter a title"
           required
           value={blog?.title}
@@ -91,6 +90,12 @@ function UpdateBlog() {
         type="submit"
         className="btn btn-primary form-control"
         value="Edit"
+      />
+      <input
+        type="button"
+        className="btn btn-primary form-control mt-2"
+        value="Cancel"
+        onClick={() => {navigate(-1)}}
       />
     </form>
   </div>

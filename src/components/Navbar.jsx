@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logocw from '../assets/boot.png';
+import Logocw from '../favo.png';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { AuthContext } from '../contexts/AuthContext';
 import { logOut } from '../helpers/firebase';
@@ -13,7 +13,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
-          <img src={Logocw} alt="navlogo" onClick={() => navigate('/')} />
+          <img src={Logocw} height="45px" alt="navlogo" onClick={() => navigate('/')} />
           <h2 className='text-white navb' onClick={() => navigate('/')}>
             S Blog
           </h2>
@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-                <DropdownButton id="dropdown-item-button" title={currentUser.displayName}>
+                <DropdownButton id="dropdown-item-button" title={currentUser?.displayName}>
                   <Dropdown.Item
                     as="button"
                     onClick={() => navigate('/newblog')}

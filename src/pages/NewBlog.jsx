@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BlogForm from '../components/BlogForm';
 import { AddBlog } from '../helpers/firebase';
-import { toastSuccessNotify } from '../helpers/toastNotify';
+import { toastSuccessNotify } from '../helpers/toast';
 
 const initialValues = { title: '', imgurl: '', content: '', author: '' };
 

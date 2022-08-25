@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Dashboard from '../pages/Dashboard';
-import Details from '../pages/Details';
+import Detail from '../pages/Detail';
 import Login from '../pages/Login';
 import NewBlog from '../pages/NewBlog';
 import Profile from '../pages/Profile';
@@ -19,8 +19,8 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/newblog" element={<NewBlog />} />
-        <Route path="/details/:id" element={<PrivateRouter />}>
-          <Route path="" element={<Details />} />
+        <Route path="/detail/:id" element={<PrivateRouter />}>
+          <Route path="" element={<Detail />} />
         </Route>
         <Route path="/updateblog/:id" element={<PrivateRouter />}>
           <Route path="" element={<UpdateBlog />} />

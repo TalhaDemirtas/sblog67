@@ -24,16 +24,16 @@ import {
   toastErrorNotify,
   toastSuccessNotify,
   toastWarnNotify,
-} from './toastNotify';
+} from './toast';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  databaseURL: process.env.REACT_APP_databaseURL,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  databaseURL: import.meta.env.VITE_databaseURL,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 const app = initializeApp(firebaseConfig); // Initialize Firebase
@@ -49,7 +49,6 @@ export const createUser = async (email, password, navigate, displayName) => {
     await updateProfile(auth.currentUser, {
       displayName: displayName,
     });
-    console.log(userCredential);
     toastSuccessNotify('Registered successfully');
     navigate('/');
   } catch (error) {
@@ -65,7 +64,6 @@ export const signIn = async (email, password, navigate) => {
       email,
       password
     );
-    console.log(userCredential);
     toastSuccessNotify('Login');
     navigate('/');
   } catch (error) {
