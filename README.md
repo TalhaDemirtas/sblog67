@@ -1,4 +1,4 @@
-# Simple Blog App
+# Simple Blog App  -  https://sblog67.netlify.app/
 
 
 ![image](https://github.com/TalhaDemirtas/sblog67/blob/master/ss.jpg)
