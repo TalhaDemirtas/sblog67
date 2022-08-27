@@ -1,5 +1,6 @@
 import BlogCard from '../components/BlogCard';
 import { GetBlog } from '../helpers/firebase';
+import Spin from '../assets/bouncing.svg'
 
 const Dashboard = () => {
   const { isLoading, blogList } = GetBlog();
@@ -8,8 +9,8 @@ const Dashboard = () => {
     <>
       <div className="d-flex justify-content-center flex-wrap">
         {isLoading ? (
-          <div className="spinner-border text-primary m-5" role="status">
-            <span className="sr-only">Loading...</span>
+          <div className='spinner m-5'>
+            <img src={Spin} alt='sp'/>
           </div>
         ) : (
           blogList?.map((item, id) => <BlogCard key={item.id} {...item} />)

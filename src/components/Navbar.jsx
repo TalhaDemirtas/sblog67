@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logocw from '../favo.png';
+import Logocw from '../assets/favo.png';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { AuthContext } from '../contexts/AuthContext';
 import { logOut } from '../helpers/firebase';

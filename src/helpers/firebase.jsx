@@ -131,7 +131,7 @@ export const AddBlog = (blog) => {
 
 export const GetBlog = () => {
   // Get Data
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [blogList, setBlogList] = useState();
   useEffect(() => {
     const data = getDatabase(firebase);

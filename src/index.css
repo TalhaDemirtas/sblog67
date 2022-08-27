@@ -19,10 +19,12 @@ img, .navb, .text-decoration-underline {
   width: 15rem;
   margin: 1rem;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  transition : 0.3s ease-in-out;
 }
 
 .card:hover {
   transform: scale(1.025);
+  transition: transform 300ms ease-in-out;
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
@@ -36,4 +38,8 @@ img, .navb, .text-decoration-underline {
   object-fit:scale-down;
   height: 12rem;
   width: 14.9rem;
+}
+
+.spinner {
+  height: 22rem;
 }
